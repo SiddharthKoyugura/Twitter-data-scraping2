@@ -1,5 +1,6 @@
 import mysql.connector
 
+# Database configurations
 db = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -32,4 +33,3 @@ def insert_twitter_data(name, bio, following, followers, location, website):
     # Inserting the values into table
     cursor.execute("INSERT INTO twitterdata (name, bio, following, followers, location, website) VALUES (%s, %s, %s, %s, %s, %s)", (name, bio, following, followers, location, website))
     db.commit()
-    print("Database insertion Success!")
